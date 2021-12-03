@@ -20,7 +20,7 @@ function App() {
           <AuthPage />
         </Route>) : (
         <Route path='/profile'>
-          <UserProfile />
+          {authCtx.isLoggedIn ? <UserProfile /> : <Redirect to='/auth' />}
         </Route>)}
         <Route path='*'>
           <Redirect to='/' />
